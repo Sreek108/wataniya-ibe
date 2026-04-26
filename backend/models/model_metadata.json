@@ -1,0 +1,45 @@
+{
+  "model_version": "2.0.0",
+  "dataset": "unified (accounts + call history)",
+  "trained_on": "2026-04-01",
+  "training_samples": 5221,
+  "test_samples": 1306,
+  "model_a_roc_auc": 0.9238,
+  "model_a_f1": 0.9012,
+  "model_a_threshold": 0.36,
+  "model_b_roc_auc": 0.909,
+  "feature_count": 49,
+  "call_features_added": 17,
+  "score_range": [
+    300,
+    850
+  ],
+  "risk_tiers": {
+    "Low Risk": "700-850",
+    "Medium Risk": "550-700",
+    "High Risk": "400-550",
+    "Very High Risk": "300-400"
+  },
+  "top_features": {
+    "dpd_normalized": 0.4297,
+    "bucket_severity": 0.0948,
+    "dpd_x_broken": 0.0753,
+    "salary_urgency": 0.0437,
+    "income_x_dti": 0.0294,
+    "risk_composite": 0.0286,
+    "debt_burden": 0.0284,
+    "payment_momentum": 0.0245,
+    "payment_consistency": 0.0174,
+    "consecutive_broken_log": 0.0165,
+    "max_dpd_normalized": 0.0144,
+    "payment_coverage": 0.0143,
+    "ontime_payment_ratio": 0.0138,
+    "bureau_normalized": 0.0132,
+    "income_log": 0.0125,
+    "dpd_acceleration": 0.0117,
+    "tenure_completion": 0.0105,
+    "avg_payment_ratio": 0.0099,
+    "payment_x_call": 0.0097,
+    "ptp_x_salary": 0.008
+  }
+}

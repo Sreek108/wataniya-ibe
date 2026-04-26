@@ -1,0 +1,22 @@
+{
+  "dpd_normalized": 0.4297,
+  "bucket_severity": 0.0948,
+  "dpd_x_broken": 0.0753,
+  "salary_urgency": 0.0437,
+  "income_x_dti": 0.0294,
+  "risk_composite": 0.0286,
+  "debt_burden": 0.0284,
+  "payment_momentum": 0.0245,
+  "payment_consistency": 0.0174,
+  "consecutive_broken_log": 0.0165,
+  "max_dpd_normalized": 0.0144,
+  "payment_coverage": 0.0143,
+  "ontime_payment_ratio": 0.0138,
+  "bureau_normalized": 0.0132,
+  "income_log": 0.0125,
+  "dpd_acceleration": 0.0117,
+  "tenure_completion": 0.0105,
+  "avg_payment_ratio": 0.0099,
+  "payment_x_call": 0.0097,
+  "ptp_x_salary": 0.008
+}

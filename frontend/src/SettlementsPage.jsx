@@ -7,7 +7,7 @@ const TYPE_META = {
   Discount:    { label: 'Discount',     color: '#2563eb', bg: '#eff6ff' },
   PaymentPlan: { label: 'Payment Plan', color: '#0d9488', bg: '#f0fdfa' },
   FeeWaiver:   { label: 'Fee Waiver',   color: '#16a34a', bg: '#f0fdf4' },
-}
+} 
 const ST_META = {
   Pending:  { color: '#f59e0b', bg: '#fef3c7' },
   Accepted: { color: '#22c55e', bg: '#dcfce7' },

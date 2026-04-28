@@ -7,7 +7,7 @@ JWT Authentication + Role-Based Access Control
 from fastapi import FastAPI, Depends, HTTPException, status
 from ml_inference import real_score
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware 
 from pydantic import BaseModel
 from typing import Optional, List
 from datetime import datetime, timedelta

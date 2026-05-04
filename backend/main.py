@@ -174,6 +174,26 @@ audit_logs: list = [
     {"id":"AUD-0018","timestamp":"2026-04-18T14:00:00","user_id":"USR-002","user_name":"Faisal Al-Rashidi","user_role":"Supervisor","action":"Campaign Launched","entity_type":"Campaign","entity_id":"CMP-002","description":"Mid-Bucket AI Voice campaign launched — 250 high-risk accounts"},
     {"id":"AUD-0019","timestamp":"2026-04-20T10:30:00","user_id":"USR-002","user_name":"Faisal Al-Rashidi","user_role":"Supervisor","action":"Escalation Resolved","entity_type":"Escalation","entity_id":"PTP-00011","description":"Escalation resolved — SAR 18,000 payment arrangement reached"},
     {"id":"AUD-0020","timestamp":"2026-04-21T09:00:00","user_id":"USR-001","user_name":"Abdullah Al-Otaibi","user_role":"Admin","action":"User Updated","entity_type":"User","entity_id":"USR-003","description":"Nora Al-Khalid promoted to senior collector"},
+    {"id":"AUD-0021","timestamp":"2026-04-22T08:15:00","user_id":"USR-003","user_name":"Nora Al-Khalid","user_role":"Collector","action":"User Login","entity_type":"Auth","entity_id":"USR-003","description":"Nora Al-Khalid logged in"},
+    {"id":"AUD-0022","timestamp":"2026-04-22T09:00:00","user_id":"USR-004","user_name":"Khaled Al-Harbi","user_role":"Legal","action":"User Login","entity_type":"Auth","entity_id":"USR-004","description":"Khaled Al-Harbi logged in"},
+    {"id":"AUD-0023","timestamp":"2026-04-22T09:30:00","user_id":"USR-005","user_name":"Layla Al-Mutairi","user_role":"Support","action":"User Login","entity_type":"Auth","entity_id":"USR-005","description":"Layla Al-Mutairi logged in"},
+    {"id":"AUD-0024","timestamp":"2026-04-22T10:00:00","user_id":"USR-002","user_name":"Faisal Al-Rashidi","user_role":"Supervisor","action":"User Login","entity_type":"Auth","entity_id":"USR-002","description":"Faisal Al-Rashidi logged in"},
+    {"id":"AUD-0025","timestamp":"2026-04-23T08:45:00","user_id":"USR-003","user_name":"Nora Al-Khalid","user_role":"Collector","action":"PTP Captured","entity_type":"PTP","entity_id":"PTP-00013","description":"PTP of SAR 35,000 captured for loan WAT-009812"},
+    {"id":"AUD-0026","timestamp":"2026-04-23T11:00:00","user_id":"USR-004","user_name":"Khaled Al-Harbi","user_role":"Legal","action":"Legal Case Initiated","entity_type":"Legal","entity_id":"LGL-0009","description":"Legal case initiated for WAT-018234 — Criminal, SAR 720,000"},
+    {"id":"AUD-0027","timestamp":"2026-04-24T09:15:00","user_id":"USR-002","user_name":"Faisal Al-Rashidi","user_role":"Supervisor","action":"Waiver Approved","entity_type":"Waiver","entity_id":"WAV-00012","description":"Principal waiver SAR 8,500 approved for hardship customer WAT-022341"},
+    {"id":"AUD-0028","timestamp":"2026-04-24T13:30:00","user_id":"USR-003","user_name":"Nora Al-Khalid","user_role":"Collector","action":"Settlement Created","entity_type":"Settlement","entity_id":"SETL-00008","description":"OTS offer SAR 185,000 created for WAT-031456 — 60-day term"},
+    {"id":"AUD-0029","timestamp":"2026-04-25T10:00:00","user_id":"USR-004","user_name":"Khaled Al-Harbi","user_role":"Legal","action":"Fraud Flag Added","entity_type":"Fraud","entity_id":"WAT-044567","description":"Critical fraud flag — identity theft suspected, police report filed"},
+    {"id":"AUD-0030","timestamp":"2026-04-25T14:00:00","user_id":"USR-002","user_name":"Faisal Al-Rashidi","user_role":"Supervisor","action":"Escalation Assigned","entity_type":"Escalation","entity_id":"PTP-00012","description":"Broken PTP escalation assigned to human agent — 3 broken PTPs"},
+    {"id":"AUD-0031","timestamp":"2026-04-26T09:00:00","user_id":"USR-001","user_name":"Abdullah Al-Otaibi","user_role":"Admin","action":"User Login","entity_type":"Auth","entity_id":"USR-001","description":"Abdullah Al-Otaibi logged in"},
+    {"id":"AUD-0032","timestamp":"2026-04-26T10:30:00","user_id":"USR-003","user_name":"Nora Al-Khalid","user_role":"Collector","action":"PTP Captured","entity_type":"PTP","entity_id":"PTP-00014","description":"PTP of SAR 9,200 captured for WAT-051234"},
+    {"id":"AUD-0033","timestamp":"2026-04-27T09:00:00","user_id":"USR-002","user_name":"Faisal Al-Rashidi","user_role":"Supervisor","action":"Settlement Accepted","entity_type":"Settlement","entity_id":"SETL-00008","description":"Settlement accepted — SAR 185,000 recovered from WAT-031456"},
+    {"id":"AUD-0034","timestamp":"2026-04-27T11:15:00","user_id":"USR-001","user_name":"Abdullah Al-Otaibi","user_role":"Admin","action":"User Created","entity_type":"User","entity_id":"USR-007","description":"New legal officer account created for Sara Al-Dosari"},
+    {"id":"AUD-0035","timestamp":"2026-04-28T08:30:00","user_id":"USR-003","user_name":"Nora Al-Khalid","user_role":"Collector","action":"User Login","entity_type":"Auth","entity_id":"USR-003","description":"Nora Al-Khalid logged in"},
+    {"id":"AUD-0036","timestamp":"2026-04-28T10:00:00","user_id":"USR-002","user_name":"Faisal Al-Rashidi","user_role":"Supervisor","action":"Waiver Rejected","entity_type":"Waiver","entity_id":"WAV-00015","description":"Late fee waiver SAR 3,200 rejected — account has 4 broken PTPs"},
+    {"id":"AUD-0037","timestamp":"2026-04-28T14:00:00","user_id":"USR-004","user_name":"Khaled Al-Harbi","user_role":"Legal","action":"Legal Case Updated","entity_type":"Legal","entity_id":"LGL-0003","description":"Case LGL-0003 status updated to Judgment — court ruled in favor of bank"},
+    {"id":"AUD-0038","timestamp":"2026-04-29T08:00:00","user_id":"USR-001","user_name":"Abdullah Al-Otaibi","user_role":"Admin","action":"User Login","entity_type":"Auth","entity_id":"USR-001","description":"Abdullah Al-Otaibi logged in"},
+    {"id":"AUD-0039","timestamp":"2026-04-29T09:00:00","user_id":"USR-003","user_name":"Nora Al-Khalid","user_role":"Collector","action":"PTP Captured","entity_type":"PTP","entity_id":"PTP-00015","description":"PTP of SAR 16,500 captured for WAT-062345"},
+    {"id":"AUD-0040","timestamp":"2026-04-29T10:30:00","user_id":"USR-002","user_name":"Faisal Al-Rashidi","user_role":"Supervisor","action":"Escalation Resolved","entity_type":"Escalation","entity_id":"PTP-00012","description":"Escalation resolved — SAR 22,000 partial recovery, legal referral waived"},
 ]
 
 def log_audit(user_id, user_name, user_role, action, entity_type, entity_id, description):
@@ -343,12 +363,63 @@ def get_models():
 def get_data():
     if not _data:
         try:
-            base     = os.path.dirname(os.path.abspath(__file__))
-            csv_path = os.path.join(base, 'data', 'wataniya_ibe_unified_scored.csv')
-            _data['df'] = pd.read_csv(csv_path)
+            base = os.path.dirname(os.path.abspath(__file__))
+            d    = os.path.join(base, 'data')
+
+            accounts = pd.read_csv(os.path.join(d, 'wataniya_accounts.csv'))
+            print(f"[DATA] accounts loaded: {len(accounts):,} rows")
+
+            agent_targets = pd.read_csv(os.path.join(d, 'agent_targets.csv'))
+            print(f"[DATA] agent_targets loaded: {len(agent_targets):,} rows")
+
+            collection_activity = pd.read_csv(os.path.join(d, 'collection_activity.csv'))
+            print(f"[DATA] collection_activity loaded: {len(collection_activity):,} rows")
+
+            call_events = pd.read_csv(os.path.join(d, 'call_events.csv'))
+            # derive helper columns used by old call endpoints
+            call_events['call_datetime'] = call_events['call_date'] + 'T' + call_events['call_time']
+            call_events['status']        = call_events['call_result'].apply(
+                lambda r: 'USER DID NOT ANSWER' if r in ('No Answer', 'Switched Off') else 'FINISHED')
+            call_events['direction']     = call_events['call_direction']
+            call_events['ptp_outcome']   = call_events['call_result'].apply(
+                lambda r: 'PTP Captured' if r == 'Promise to Pay'
+                else ('Paid' if r == 'Paid'
+                else ('Refused' if r == 'Refused' else 'No PTP')))
+            call_events['ptp_amount_sar'] = pd.to_numeric(call_events['ptp_amount'], errors='coerce').fillna(0).astype(int)
+            call_events['agent_type']    = call_events['call_channel'].apply(
+                lambda c: 'AI' if c in ('IVR/Robot', 'NABA') else 'Human')
+            call_events['duration_sec']  = pd.to_numeric(call_events['call_duration_seconds'], errors='coerce').fillna(0).astype(int)
+            call_events['sentiment']     = 'N/A'
+            call_events['call_score']    = None
+            call_events['latency_ms']    = 0
+            call_events['delinquency_bucket'] = call_events['dpd_bucket']
+            call_events['account_id']    = call_events['loan_id']
+            call_events['sms_triggered'] = (
+                call_events['sms_template_triggered'].notna() &
+                (call_events['sms_template_triggered'] != '')
+            )
+            print(f"[DATA] call_events loaded: {len(call_events):,} rows")
+
+            notif_path = os.path.join(d, 'notification_events.csv')
+            if os.path.exists(notif_path):
+                notification_events = pd.read_csv(notif_path)
+                print(f"[DATA] notification_events loaded: {len(notification_events):,} rows")
+            else:
+                notification_events = pd.DataFrame()
+                print("[DATA] notification_events.csv not found — skipping")
+
+            _data['df']                    = accounts
+            _data['agent_targets']         = agent_targets
+            _data['collection_activity']   = collection_activity
+            _data['call_events']           = call_events
+            _data['notification_events']   = notification_events
         except Exception as e:
             print(f"Data load error: {e}")
-            _data['df'] = pd.DataFrame()
+            _data['df']                    = pd.DataFrame()
+            _data['agent_targets']         = pd.DataFrame()
+            _data['collection_activity']   = pd.DataFrame()
+            _data['call_events']           = pd.DataFrame()
+            _data['notification_events']   = pd.DataFrame()
     return _data
 
 def compute_score_from_request(req: ScoreRequest) -> dict:
@@ -442,37 +513,39 @@ async def dashboard_overview(user=Depends(require_permission("view_dashboard")))
     df   = data.get('df', pd.DataFrame())
     if df.empty:
         raise HTTPException(500, "Data not loaded")
-    total    = len(df)
-    labelled = df[df['outcome_label'] != 'Pending']
-    paid_rate = (labelled['outcome_label'] == 'Paid').mean()
+    total = len(df)
+    delinquent = df[df['account_status'] == 'Delinquent']
+    paid_rate  = round(float(len(df[df['account_status'] == 'Active']) / max(total, 1)), 3)
+    handling_dist = df['ptp_propensity_score'].apply(
+        lambda s: 'AI Only' if s >= 600 else ('AI + Human' if s >= 450 else 'Human Led')
+    ).value_counts().to_dict()
     return {
         "total_accounts":       total,
-        "active_accounts":      int(len(df[df['outcome_label'] == 'Pending'])),
-        "total_ptps_active":    int(df['has_active_ptp'].sum()),
-        "avg_ptp_score":        int(df['ml_ptp_score'].mean()),
-        "paid_rate":            round(float(paid_rate), 3),
-        "bucket_distribution":  df['delinquency_bucket'].value_counts().to_dict(),
+        "active_accounts":      int(len(delinquent)),
+        "total_ptps_active":    int((df['ptp_count'] > 0).sum()),
+        "avg_ptp_score":        int(df['ptp_propensity_score'].mean()),
+        "paid_rate":            paid_rate,
+        "bucket_distribution":  df['dpd_bucket'].value_counts().to_dict(),
         "risk_distribution":    df['ml_risk_tier'].value_counts().to_dict(),
-        "channel_distribution": df['ml_recommended_channel'].value_counts().to_dict(),
-        "handling_distribution":df['ml_handling_type'].value_counts().to_dict(),
-        "avg_outstanding_sar":  int(df['outstanding_balance_sar'].mean()),
-        "total_outstanding_sar":int(df['outstanding_balance_sar'].sum()),
-        "broken_ptps_today":    int(df['consecutive_broken_ptps'].gt(0).sum()),
+        "channel_distribution": df['recommended_channel'].value_counts().to_dict(),
+        "handling_distribution":handling_dist,
+        "avg_outstanding_sar":  int(df['outstanding_balance'].mean()),
+        "total_outstanding_sar":int(df['outstanding_balance'].sum()),
+        "broken_ptps_today":    int(df['broken_ptp_count'].gt(0).sum()),
     }
 
 @app.get("/dashboard/performance")
 async def dashboard_performance(user=Depends(require_permission("view_dashboard"))):
-    data     = get_data()
-    df       = data.get('df', pd.DataFrame())
-    labelled = df[df['outcome_label'] != 'Pending']
-    by_bucket = labelled.groupby('delinquency_bucket').apply(
-        lambda x: {
-            "total":     len(x),
-            "paid":      int((x['outcome_label'] == 'Paid').sum()),
-            "pay_rate":  round(float((x['outcome_label'] == 'Paid').mean()), 3),
-            "avg_score": int(x['ml_ptp_score'].mean()),
+    data = get_data()
+    df   = data.get('df', pd.DataFrame())
+    by_bucket = {}
+    for bucket, grp in df.groupby('dpd_bucket'):
+        by_bucket[bucket] = {
+            "total":     len(grp),
+            "paid":      int((grp['account_status'] == 'Active').sum()),
+            "pay_rate":  round(float((grp['account_status'] == 'Active').mean()), 3),
+            "avg_score": int(grp['ptp_propensity_score'].mean()),
         }
-    ).to_dict()
     return {
         "by_bucket":    by_bucket,
         "model_accuracy": 0.8600, "model_auc": 0.9238,
@@ -491,19 +564,18 @@ async def get_accounts(
     data = get_data()
     df   = data.get('df', pd.DataFrame())
     if user['role'] == Role.COLLECTOR:
-        df = df[df['assigned_agent_name'] == user['name']]
+        df = df[df['assigned_agent'] == user['name']]
     elif user['role'] == Role.LEGAL:
-        df = df[df['legal_action_flag'] == True]
-    if bucket:    df = df[df['delinquency_bucket'] == bucket]
+        df = df[df['legal_status'].notna() & (df['legal_status'] != '')]
+    if bucket:    df = df[df['dpd_bucket'] == bucket]
     if risk_tier: df = df[df['ml_risk_tier'] == risk_tier]
-    df_sorted = df.sort_values('ml_ptp_score', ascending=True)
-    page = df_sorted.iloc[offset:offset+limit][[
-        'account_id', 'customer_name', 'phone_number', 'product_type',
-        'delinquency_bucket', 'current_dpd', 'outstanding_balance_sar',
-        'monthly_installment_sar', 'ml_ptp_score', 'ml_risk_tier',
-        'ml_recommended_channel', 'ml_handling_type', 'has_active_ptp',
-        'ptp_amount_sar', 'assigned_agent_name', 'dpd_trend', 'outcome_label'
-    ]]
+    df_sorted = df.sort_values('ptp_propensity_score', ascending=True)
+    cols = ['loan_id', 'customer_name', 'mobile_number', 'product_type',
+            'dpd_bucket', 'dpd', 'outstanding_balance', 'remaining_principal',
+            'installment_amount', 'ptp_propensity_score', 'ml_risk_tier',
+            'recommended_channel', 'broken_ptp_risk', 'ptp_count',
+            'assigned_agent', 'account_status']
+    page = df_sorted.iloc[offset:offset+limit][cols]
     return {"total": len(df_sorted), "offset": offset, "limit": limit,
             "accounts": df_to_records(page)}
 
@@ -511,7 +583,7 @@ async def get_accounts(
 async def get_account(account_id: str, user=Depends(get_current_user)):
     data = get_data()
     df   = data.get('df', pd.DataFrame())
-    row  = df[df['account_id'] == account_id]
+    row  = df[df['loan_id'] == account_id]
     if row.empty:
         raise HTTPException(404, f"Account {account_id} not found")
     return df_to_records(row)[0]
@@ -531,21 +603,53 @@ async def score_account(req: ScoreRequest, user=Depends(require_permission("view
 async def get_account_score(account_id: str, user=Depends(require_permission("view_ml_scores"))):
     data = get_data()
     df   = data.get('df', pd.DataFrame())
-    row  = df[df['account_id'] == account_id]
+    row  = df[df['loan_id'] == account_id]
     if row.empty:
         raise HTTPException(404, "Account not found")
-    r      = row.iloc[0]
-    models = get_models()
+    r = row.iloc[0]
+
+    score               = int(r['ptp_propensity_score'])
+    remaining_principal = float(r['remaining_principal'])  if pd.notna(r['remaining_principal'])  else 0.0
+    installment_amount  = float(r['installment_amount'])   if pd.notna(r['installment_amount'])    else 0.0
+    salary              = float(r['salary'])               if pd.notna(r['salary'])                else 0.0
+    ptp_kept_ratio      = float(r['ptp_kept_ratio'])       if pd.notna(r['ptp_kept_ratio'])        else 0.0
+    call_attempts       = int(r['call_attempts'])          if pd.notna(r['call_attempts'])          else 0
+    dpd                 = int(r['dpd'])
+    dti_ratio           = round(installment_amount / salary, 3) if salary > 0 else 0.0
+    pay_probability     = round(max(0.0, min(1.0, (score - 300) / 550)), 3)
+    risk_tier           = ('Low Risk'       if score >= 700 else
+                           'Medium Risk'    if score >= 550 else
+                           'High Risk'      if score >= 400 else 'Very High Risk')
+    handling            = ('AI Only' if score >= 600 else 'AI + Human' if score >= 450 else 'Human Led')
+    score_band          = 'High' if score > 700 else 'Medium' if score > 500 else 'Low'
+
     return {
-        "account_id":          account_id,
-        "ptp_score":           int(r['ml_ptp_score']),
-        "pay_probability":     float(r['ml_pay_probability']),
-        "risk_tier":           r['ml_risk_tier'],
-        "recommended_channel": r['ml_recommended_channel'],
-        "handling_type":       r['ml_handling_type'],
-        "broken_ptp_risk":     float(r['ml_broken_ptp_risk']),
-        "feature_importance":  load_feature_importance(),
-        "model_version":       "2.0.0",
+        "loan_id":              account_id,
+        "customer_name":        str(r['customer_name']),
+        "product_type":         str(r['product_type']),
+        "dpd_bucket":           str(r['dpd_bucket']),
+        "dpd":                  dpd,
+        "remaining_principal":  remaining_principal,
+        "installment_amount":   installment_amount,
+        "ptp_count":            int(r['ptp_count']),
+        "ptp_kept_ratio":       ptp_kept_ratio,
+        "salary":               salary,
+        "dti_ratio":            dti_ratio,
+        "ptp_propensity_score": score,
+        "pay_probability":      pay_probability,
+        "risk_tier":            risk_tier,
+        "handling_type":        handling,
+        "broken_ptp_risk":      float(r['broken_ptp_risk']),
+        "recommended_channel":  str(r['recommended_channel']),
+        "score_band":           score_band,
+        "feature_importance": [
+            {"feature": "DPD",           "value": dpd,                "importance": 0.28},
+            {"feature": "PTP History",   "value": ptp_kept_ratio,     "importance": 0.22},
+            {"feature": "Outstanding",   "value": remaining_principal, "importance": 0.18},
+            {"feature": "Salary",        "value": salary,             "importance": 0.15},
+            {"feature": "Installment",   "value": installment_amount,  "importance": 0.10},
+            {"feature": "Call Attempts", "value": call_attempts,      "importance": 0.07},
+        ],
     }
 
 @app.get("/ml/metadata")
@@ -613,23 +717,24 @@ def _init_sample_ptps():
 async def capture_ptp(req: PTPCaptureRequest, user=Depends(require_permission("capture_ptp"))):
     data = get_data()
     df   = data.get('df', pd.DataFrame())
-    row  = df[df['account_id'] == req.account_id]
+    row  = df[df['loan_id'] == req.account_id]
     if row.empty:
         raise HTTPException(404, "Account not found")
     r       = row.iloc[0]
+    ptp_kept = float(r['ptp_kept_ratio']) if not pd.isna(r.get('ptp_kept_ratio', float('nan'))) else 0.5
     risk_in = ScoreRequest(
-        current_dpd=int(r['current_dpd']), max_dpd_ever=int(r['max_dpd_ever']),
-        ontime_payment_ratio=float(r['ontime_payment_ratio']),
-        ptp_reliability_rate=float(r['ptp_reliability_rate']) if not pd.isna(r['ptp_reliability_rate']) else None,
-        consecutive_broken_ptps=int(r['consecutive_broken_ptps']),
-        dti_ratio=float(r['dti_ratio']), days_to_next_salary=int(r['days_to_next_salary']),
-        call_pickup_rate=float(r['call_pickup_rate']),
-        whatsapp_response_rate=float(r['whatsapp_response_rate']),
-        monthly_income_sar=float(r['monthly_income_sar']),
-        other_active_loans=int(r['other_active_loans']),
-        job_loss_flag=bool(r['job_loss_flag']), fraud_suspected_flag=bool(r['fraud_suspected_flag']),
-        dispute_flag=bool(r['dispute_flag']), bucket=r['delinquency_bucket'],
-        bureau_score_at_origination=int(r['bureau_score_at_origination']),
+        current_dpd=int(r['dpd']), max_dpd_ever=int(r['dpd']),
+        ontime_payment_ratio=ptp_kept,
+        ptp_reliability_rate=ptp_kept,
+        consecutive_broken_ptps=int(r.get('broken_ptp_count', 0)),
+        dti_ratio=0.4, days_to_next_salary=15,
+        call_pickup_rate=0.5,
+        whatsapp_response_rate=0.5,
+        monthly_income_sar=float(r.get('salary', 10000)),
+        other_active_loans=0,
+        job_loss_flag=False, fraud_suspected_flag=False,
+        dispute_flag=False, bucket=r['dpd_bucket'],
+        bureau_score_at_origination=620,
     )
     score_result = compute_score_from_request(risk_in)
     ptp_record = {
@@ -655,6 +760,9 @@ async def capture_ptp(req: PTPCaptureRequest, user=Depends(require_permission("c
         "workflow_updated_at":  datetime.now().isoformat(),
         "broken_date":          None,
         "broken_count":         0,
+        "outstanding_sar":      float(r.get('outstanding_balance', 0) or 0),
+        "product_type":         str(r.get('product_type', 'Personal Finance')),
+        "dpd_bucket":           str(r.get('dpd_bucket', '—')),
     }
     _ptp_log.append(ptp_record)
     log_audit(user["user_id"], user["name"], str(user["role"]), "PTP Captured", "PTP",
@@ -856,8 +964,18 @@ async def get_escalations(user=Depends(get_current_user)):
     result = []
     for p in active:
         e = dict(p)
-        acct = df[df['account_id'] == p.get('account_id', '')] if not df.empty else pd.DataFrame()
-        e["outstanding_sar"]     = float(acct.iloc[0]['outstanding_balance_sar']) if not acct.empty else float(p.get('outstanding_sar', 0))
+        acct = df[df['loan_id'] == p.get('account_id', '')] if not df.empty else pd.DataFrame()
+        if not acct.empty:
+            row = acct.iloc[0]
+            e["outstanding_sar"]  = float(row.get('outstanding_balance', p.get('outstanding_sar', 0)) or 0)
+            e["product_type"]     = str(row.get('product_type', p.get('product_type', 'Personal Finance')))
+            e["dpd_bucket"]       = str(row.get('dpd_bucket', p.get('dpd_bucket', '—')))
+            e["customer_name"]    = str(row.get('customer_name', p.get('customer_name', '—')))
+        else:
+            e["outstanding_sar"]  = float(p.get('outstanding_sar', 0))
+            e["product_type"]     = p.get('product_type', 'Personal Finance')
+            e["dpd_bucket"]       = p.get('dpd_bucket', '—')
+            e["customer_name"]    = p.get('customer_name', '—')
         e["recommended_action"]  = _recommended_action_for(p.get("escalation_level", "ai_retry"))
         e["days_until_due"]      = _days_until_due(p)
         result.append(e)
@@ -906,22 +1024,9 @@ async def resolve_escalation(ptp_id: str, req: EscalationResolveRequest, user=De
 _calls_cache = {}
 
 def get_calls_data():
-    if not _calls_cache:
-        try:
-            base     = os.path.dirname(os.path.abspath(__file__))
-            csv_path = os.path.join(base, 'data', 'call_events.csv')
-            df = pd.read_csv(csv_path)
-            df['ptp_amount_sar'] = df['ptp_amount_sar'].fillna(0).astype(int)
-            df['latency_ms']     = df['latency_ms'].fillna(0).astype(int)
-            df['duration_sec']   = df['duration_sec'].fillna(0).astype(int)
-            df['sentiment']      = df['sentiment'].fillna('N/A')
-            df['call_score']     = pd.to_numeric(df['call_score'], errors='coerce')
-            _calls_cache['df']   = df
-            print(f"✓ Call history loaded: {len(df)} records")
-        except Exception as e:
-            print(f"Call history load error: {e}")
-            _calls_cache['df'] = pd.DataFrame()
-    return _calls_cache
+    data = get_data()
+    df   = data.get('call_events', pd.DataFrame())
+    return {'df': df}
 
 @app.get("/calls")
 async def get_call_history(
@@ -941,13 +1046,13 @@ async def get_call_history(
 
     filtered = df.copy()
     if status:    filtered = filtered[filtered['status']    == status]
-    if direction: filtered = filtered[filtered['direction'] == direction]
+    if direction: filtered = filtered[filtered['call_direction'] == direction]
     if agent:     filtered = filtered[filtered['agent_name']== agent]
-    if bucket:    filtered = filtered[filtered['delinquency_bucket'] == bucket]
+    if bucket:    filtered = filtered[filtered['dpd_bucket'] == bucket]
     if search:
         mask = (
             filtered['call_id'].str.contains(search, case=False, na=False)   |
-            filtered['account_id'].str.contains(search, case=False, na=False) |
+            filtered['loan_id'].str.contains(search, case=False, na=False) |
             filtered['agent_name'].str.contains(search, case=False, na=False)
         )
         filtered = filtered[mask]
@@ -961,18 +1066,18 @@ async def get_call_history(
         "total_calls":        int(len(df)),
         "success_rate":       round(float((df['status']=='FINISHED').mean() * 100), 1),
         "avg_duration_sec":   int(finished['duration_sec'].mean()) if len(finished) else 0,
-        "positive_sentiment": int((finished['sentiment']=='Positive').sum()),
+        "positive_sentiment": 0,
         "ptp_captured":       int((df['ptp_outcome']=='PTP Captured').sum()),
         "ptp_capture_rate":   round(float((df['ptp_outcome']=='PTP Captured').sum() / max(len(finished),1) * 100), 1),
         "total_ptp_value":    int(df['ptp_amount_sar'].sum()),
         "ai_call_share":      round(float((df['agent_type']=='AI').mean() * 100), 1),
-        "outbound_calls":     int((df['direction']=='Outbound').sum()),
-        "web_calls":          int((df['direction']=='Web').sum()),
+        "outbound_calls":     int((df['call_direction']=='Outbound').sum()),
+        "web_calls":          0,
         "status_distribution":    df['status'].value_counts().to_dict(),
-        "sentiment_distribution": finished['sentiment'].value_counts().to_dict(),
-        "ptp_outcome_distribution": finished['ptp_outcome'].value_counts().to_dict(),
+        "sentiment_distribution": {},
+        "ptp_outcome_distribution": df['ptp_outcome'].value_counts().to_dict(),
         "agent_distribution":  df['agent_type'].value_counts().to_dict(),
-        "bucket_distribution": df['delinquency_bucket'].value_counts().to_dict(),
+        "bucket_distribution": df['dpd_bucket'].value_counts().to_dict(),
         "unique_agents":       sorted(df['agent_name'].unique().tolist()),
     }
 
@@ -992,7 +1097,7 @@ async def get_call_stats(user=Depends(get_current_user)):
 
     # Daily volume trend
     df2 = df.copy()
-    df2['date_only'] = pd.to_datetime(df2['call_datetime']).dt.date.astype(str)
+    df2['date_only'] = df2['call_date'].astype(str)
     volume_trend = df2.groupby('date_only').size().reset_index(name='calls')
     volume_trend = volume_trend.rename(columns={'date_only': 'date'}).to_dict(orient='records')
 
@@ -1002,20 +1107,19 @@ async def get_call_stats(user=Depends(get_current_user)):
         a_df  = df[df['agent_name'] == agent]
         a_fin = a_df[a_df['status'] == 'FINISHED']
         ptp_rate = round(float((a_df['ptp_outcome']=='PTP Captured').sum() / max(len(a_fin),1) * 100), 1)
-        scores   = a_fin['call_score'].dropna().astype(float)
         agent_stats.append({
             "name":        agent,
             "type":        a_df['agent_type'].iloc[0],
             "calls":       int(len(a_df)),
             "ptp_rate":    ptp_rate,
-            "avg_quality": round(float(scores.mean()), 1) if len(scores) else None,
+            "avg_quality": None,
         })
     agent_stats.sort(key=lambda x: x['ptp_rate'], reverse=True)
 
     # Bucket performance
     bucket_perf = []
-    for bucket in ['1-30 DPD','31-60 DPD','61-90 DPD','NPA','Write-off']:
-        b_df  = df[df['delinquency_bucket'] == bucket]
+    for bucket in df['dpd_bucket'].unique():
+        b_df  = df[df['dpd_bucket'] == bucket]
         b_fin = b_df[b_df['status'] == 'FINISHED']
         if len(b_df) == 0:
             continue
@@ -1027,20 +1131,7 @@ async def get_call_stats(user=Depends(get_current_user)):
             "success":  round(float((b_df['status']=='FINISHED').mean() * 100), 1),
         })
 
-    # Sentiment → PTP matrix
     sentiment_matrix = []
-    for sent in ['Positive', 'Neutral', 'Negative']:
-        s_df = finished[finished['sentiment'] == sent]
-        if len(s_df) == 0:
-            continue
-        tot = len(s_df)
-        sentiment_matrix.append({
-            "sentiment":   sent,
-            "ptpCaptured": round(float((s_df['ptp_outcome']=='PTP Captured').sum() / tot * 100), 1),
-            "noPTP":       round(float((s_df['ptp_outcome']=='No PTP').sum() / tot * 100), 1),
-            "refused":     round(float((s_df['ptp_outcome']=='Refused').sum() / tot * 100), 1),
-            "dispute":     round(float((s_df['ptp_outcome']=='Dispute').sum() / tot * 100), 1),
-        })
 
     # AI vs Human comparison
     def _ch_stats(cdf, cost_per_call):
@@ -1050,8 +1141,8 @@ async def get_call_stats(user=Depends(get_current_user)):
         ptps  = int((cdf['ptp_outcome'] == 'PTP Captured').sum())
         ptp_v = float(cdf['ptp_amount_sar'].sum())
         by_bk = {}
-        for bk in ['1-30 DPD', '31-60 DPD', '61-90 DPD', 'NPA', 'Write-off']:
-            b     = cdf[cdf['delinquency_bucket'] == bk]
+        for bk in cdf['dpd_bucket'].unique():
+            b     = cdf[cdf['dpd_bucket'] == bk]
             b_fin = b[b['status'] == 'FINISHED']
             bptps = int((b['ptp_outcome'] == 'PTP Captured').sum())
             by_bk[bk] = {
@@ -1070,7 +1161,7 @@ async def get_call_stats(user=Depends(get_current_user)):
             'ptp_rate_pct':           round(float(ptps / conn * 100), 1),
             'cost_per_ptp_sar':       round(total * cost_per_call / max(ptps, 1), 1),
             'recovery_per_call_sar':  round(ptp_v / total, 2),
-            'sentiment_positive_pct': round(float((fin['sentiment'] == 'Positive').sum() / conn * 100), 1),
+            'sentiment_positive_pct': 0.0,
             'by_bucket':              by_bk,
         }
 
@@ -1120,7 +1211,7 @@ def _get_target_count(buckets: List[str], target_filter: str) -> int:
     df   = data.get('df', pd.DataFrame())
     if df.empty:
         return 0
-    filtered = df[df['delinquency_bucket'].isin(buckets)]
+    filtered = df[df['dpd_bucket'].isin(buckets)]
     if target_filter == "High Risk":
         filtered = filtered[filtered['ml_risk_tier'].isin(['High Risk', 'Very High Risk'])]
     elif target_filter == "Medium Risk":
@@ -1639,12 +1730,12 @@ async def get_settlement_stats(user=Depends(get_current_user)):
 async def get_settlement_options(account_id: str, user=Depends(get_current_user)):
     data = get_data()
     df   = data.get('df', pd.DataFrame())
-    row  = df[df['account_id'] == account_id] if not df.empty else pd.DataFrame()
+    row  = df[df['loan_id'] == account_id] if not df.empty else pd.DataFrame()
     if row.empty:
         raise HTTPException(404, f"Account {account_id} not found")
     r           = row.iloc[0]
-    score       = int(r.get('ml_ptp_score', 500))
-    outstanding = float(r.get('outstanding_balance_sar', 0))
+    score       = int(r.get('ptp_propensity_score', 500))
+    outstanding = float(r.get('outstanding_balance', 0))
     return {
         "account_id":  account_id,
         "ptp_score":   score,
@@ -1672,13 +1763,13 @@ async def create_settlement(req: SettlementCreateRequest, user=Depends(get_curre
     _init_settlements()
     data = get_data()
     df   = data.get('df', pd.DataFrame())
-    row  = df[df['account_id'] == req.account_id] if not df.empty else pd.DataFrame()
+    row  = df[df['loan_id'] == req.account_id] if not df.empty else pd.DataFrame()
     if row.empty:
         raise HTTPException(404, f"Account {req.account_id} not found")
     r               = row.iloc[0]
     customer_name   = str(r.get('customer_name', 'Unknown'))
-    original_amount = float(r.get('outstanding_balance_sar', 0))
-    bucket          = str(r.get('delinquency_bucket', 'NPA'))
+    original_amount = float(r.get('outstanding_balance', 0))
+    bucket          = str(r.get('dpd_bucket', 'NPA'))
     risk_tier       = str(r.get('ml_risk_tier', 'High Risk'))
     saving          = round(original_amount - req.settlement_amount_sar, 2)
     saving_pct      = round(saving / original_amount * 100, 2) if original_amount > 0 else 0
@@ -1790,7 +1881,9 @@ def _init_waivers():
     if df.empty:
         return
     now  = datetime.now()
-    accs = df.head(15)[['account_id','customer_name','outstanding_balance_sar','delinquency_bucket']].to_dict('records')
+    accs = df.head(15)[['loan_id','customer_name','outstanding_balance','dpd_bucket']].rename(
+        columns={'loan_id':'account_id','outstanding_balance':'outstanding_balance_sar','dpd_bucket':'delinquency_bucket'}
+    ).to_dict('records')
 
     def ts(d):  return (now - timedelta(days=d)).replace(hour=10, minute=0, second=0, microsecond=0).isoformat()
     def rv(d):  return (now - timedelta(days=d)).replace(hour=14, minute=30, second=0, microsecond=0).isoformat()
@@ -1870,7 +1963,7 @@ async def create_waiver(req: WaiverCreateRequest, user=Depends(get_current_user)
         raise HTTPException(400, "amount_sar must be positive")
     data = get_data()
     df   = data.get('df', pd.DataFrame())
-    row  = df[df['account_id'] == req.account_id] if not df.empty else pd.DataFrame()
+    row  = df[df['loan_id'] == req.account_id] if not df.empty else pd.DataFrame()
     if row.empty:
         raise HTTPException(404, f"Account {req.account_id} not found")
     r       = row.iloc[0]
@@ -1881,8 +1974,8 @@ async def create_waiver(req: WaiverCreateRequest, user=Depends(get_current_user)
         "waiver_id":        f"WAV-{wid:05d}",
         "account_id":       req.account_id,
         "customer_name":    str(r.get('customer_name', '')),
-        "outstanding_sar":  float(r.get('outstanding_balance_sar', 0)),
-        "bucket":           str(r.get('delinquency_bucket', '')),
+        "outstanding_sar":  float(r.get('outstanding_balance', 0)),
+        "bucket":           str(r.get('dpd_bucket', '')),
         "waiver_type":      req.waiver_type,
         "amount_sar":       req.amount_sar,
         "reason":           req.reason,
@@ -1955,7 +2048,7 @@ async def reject_waiver(waiver_id: int, body: WaiverReviewRequest, user=Depends(
 # REPORTS
 # ─────────────────────────────────────────────────────────────
 
-_BUCKET_ORDER = ['Write-off', 'NPA', '61-90 DPD', '31-60 DPD', '1-30 DPD', 'Current']
+_BUCKET_ORDER = ['Write-Off', 'NPA 361-450', 'NPA 181-360', 'NPA 91-180', '61-90 Days', '31-60 Days', '1-30 Days', '0 Days']
 _BUCKET_IDX   = {b: i for i, b in enumerate(_BUCKET_ORDER)}
 
 @app.get("/reports/roll-forward")
@@ -1971,9 +2064,17 @@ async def get_roll_forward(period: str = "month", user=Depends(get_current_user)
     improving_seg: dict = {}
 
     for _, row in df.iterrows():
-        curr_b = row['delinquency_bucket']
-        trend  = row.get('dpd_trend', 'Stable')
-        sar    = float(row.get('outstanding_balance_sar', 0))
+        curr_b = row['dpd_bucket']
+        broken = int(row.get('broken_ptp_count', 0) or 0)
+        kept   = float(row.get('ptp_kept_ratio', 0.5) or 0.5)
+        dpd    = int(row.get('dpd', 0) or 0)
+        if broken >= 2 or (broken >= 1 and kept < 0.4) or dpd > 90:
+            trend = 'Worsening'
+        elif kept >= 0.8 and broken == 0 and dpd < 30:
+            trend = 'Improving'
+        else:
+            trend  = 'Stable'
+        sar    = float(row.get('outstanding_balance', 0))
         cidx   = _BUCKET_IDX.get(curr_b)
         if cidx is None:
             continue
@@ -2030,17 +2131,18 @@ async def get_collection_efficiency(user=Depends(get_current_user)):
     if df.empty:
         raise HTTPException(500, "Data not loaded")
 
-    TARGETS = {'1-30 DPD': 85, '31-60 DPD': 65, '61-90 DPD': 45, 'NPA': 25, 'Write-off': 10}
-    total_sar   = float(df['outstanding_balance_sar'].sum())
-    overall_paid_rate = float((df['outcome_label'] == 'Paid').mean())
+    TARGETS = {'1-30 Days': 85, '31-60 Days': 65, '61-90 Days': 45,
+               'NPA 91-180': 25, 'NPA 181-360': 20, 'NPA 361-450': 15, 'Write-Off': 10}
+    total_sar   = float(df['outstanding_balance'].sum())
+    overall_active_rate = float((df['account_status'] == 'Active').mean())
 
     by_bucket = []
     for bucket, target in TARGETS.items():
-        b_df  = df[df['delinquency_bucket'] == bucket]
+        b_df  = df[df['dpd_bucket'] == bucket]
         if b_df.empty:
             continue
-        b_sar       = float(b_df['outstanding_balance_sar'].sum())
-        b_paid_rate = float((b_df['outcome_label'] == 'Paid').mean()) * 100
+        b_sar       = float(b_df['outstanding_balance'].sum())
+        b_paid_rate = float((b_df['account_status'] == 'Active').mean()) * 100
         actual      = round(b_paid_rate, 1)
         by_bucket.append({
             'bucket':          bucket,
@@ -2051,11 +2153,11 @@ async def get_collection_efficiency(user=Depends(get_current_user)):
             'total_sar':       round(b_sar),
         })
 
-    collected_sar = total_sar * overall_paid_rate
+    collected_sar = total_sar * overall_active_rate
     return {
         'total_portfolio_sar': round(total_sar),
         'collected_sar':       round(collected_sar),
-        'collection_rate_pct': round(overall_paid_rate * 100, 1),
+        'collection_rate_pct': round(overall_active_rate * 100, 1),
         'total_accounts':      len(df),
         'by_bucket':           by_bucket,
     }
@@ -2076,17 +2178,36 @@ async def get_ai_vs_human(user=Depends(get_current_user)):
         conn  = max(len(fin), 1)
         ptps  = int((cdf['ptp_outcome'] == 'PTP Captured').sum())
         ptp_v = float(cdf['ptp_amount_sar'].sum())
-        by_bk = {}
-        for bk in ['1-30 DPD', '31-60 DPD', '61-90 DPD', 'NPA', 'Write-off']:
-            b     = cdf[cdf['delinquency_bucket'] == bk]
+        # Map CSV dpd_bucket values to frontend keys; merge NPA sub-buckets
+        BUCKET_REMAP = {
+            '1-30 Days':  '1-30 DPD',  '31-60 Days': '31-60 DPD',
+            '61-90 Days': '61-90 DPD',
+            'NPA 91-180': 'NPA', 'NPA 181-360': 'NPA', 'NPA 361-450': 'NPA',
+            'Write-Off':  'Write-off',
+        }
+        acc_bk = {}
+        for bk_raw in cdf['dpd_bucket'].dropna().unique():
+            bk = BUCKET_REMAP.get(bk_raw)
+            if bk is None:
+                continue
+            b     = cdf[cdf['dpd_bucket'] == bk_raw]
             b_fin = b[b['status'] == 'FINISHED']
             bptps = int((b['ptp_outcome'] == 'PTP Captured').sum())
-            by_bk[bk] = {
-                'calls':     int(len(b)),
-                'ptps':      bptps,
-                'ptp_rate':  round(float(bptps / max(len(b_fin), 1) * 100), 1),
-                'ptp_value': round(float(b['ptp_amount_sar'].sum())),
+            if bk not in acc_bk:
+                acc_bk[bk] = {'calls': 0, 'ptps': 0, 'fin': 0, 'ptp_value': 0.0}
+            acc_bk[bk]['calls']     += int(len(b))
+            acc_bk[bk]['ptps']      += bptps
+            acc_bk[bk]['fin']       += int(len(b_fin))
+            acc_bk[bk]['ptp_value'] += float(b['ptp_amount_sar'].sum())
+        by_bk = {
+            bk: {
+                'calls':     d['calls'],
+                'ptps':      d['ptps'],
+                'ptp_rate':  round(d['ptps'] / max(d['fin'], 1) * 100, 1),
+                'ptp_value': round(d['ptp_value']),
             }
+            for bk, d in acc_bk.items()
+        }
         return {
             'total_calls':            int(len(cdf)),
             'connected_calls':        int(len(fin)),
@@ -2097,7 +2218,7 @@ async def get_ai_vs_human(user=Depends(get_current_user)):
             'ptp_rate_pct':           round(float(ptps / conn * 100), 1),
             'cost_per_ptp_sar':       round(total * cost_per_call / max(ptps, 1), 1),
             'recovery_per_call_sar':  round(ptp_v / total, 2),
-            'sentiment_positive_pct': round(float((fin['sentiment'] == 'Positive').sum() / conn * 100), 1),
+            'sentiment_positive_pct': 0.0,
             'by_bucket':              by_bk,
         }
 
@@ -2158,8 +2279,8 @@ async def get_ai_vs_human(user=Depends(get_current_user)):
     # Top human performers — top 5 agents by PTP rate
     human_agents = []
     for agent in hum_df['agent_name'].unique():
-        a     = hum_df[hum_df['agent_name'] == agent]
-        a_fin = a[a['status'] == 'FINISHED']
+        a      = hum_df[hum_df['agent_name'] == agent]
+        a_fin  = a[a['status'] == 'FINISHED']
         ptps_a = int((a['ptp_outcome'] == 'PTP Captured').sum())
         if len(a) < 5:
             continue
@@ -2172,6 +2293,26 @@ async def get_ai_vs_human(user=Depends(get_current_user)):
         })
     human_agents.sort(key=lambda x: x['ptp_rate'], reverse=True)
 
+    bucket_performance = [
+        {
+            'bucket':              bk,
+            'ai_calls':            ai_s['by_bucket'].get(bk, {}).get('calls',    0),
+            'ai_ptp_count':        ai_s['by_bucket'].get(bk, {}).get('ptps',     0),
+            'ai_ptp_rate':         ai_s['by_bucket'].get(bk, {}).get('ptp_rate', 0.0),
+            'human_calls':         hum_s['by_bucket'].get(bk, {}).get('calls',    0),
+            'human_ptp_count':     hum_s['by_bucket'].get(bk, {}).get('ptps',     0),
+            'human_ptp_rate':      hum_s['by_bucket'].get(bk, {}).get('ptp_rate', 0.0),
+            'recommended_channel': (
+                'Human Preferred' if bk in ('NPA', 'Write-off')
+                else 'AI Preferred'
+                if ai_s['by_bucket'].get(bk, {}).get('ptp_rate', 0) >=
+                   hum_s['by_bucket'].get(bk, {}).get('ptp_rate', 0)
+                else 'Human Preferred'
+            ),
+        }
+        for bk in ['1-30 DPD', '31-60 DPD', '61-90 DPD', 'NPA', 'Write-off']
+    ]
+
     return {
         'ai':                   ai_s,
         'human':                hum_s,
@@ -2179,6 +2320,7 @@ async def get_ai_vs_human(user=Depends(get_current_user)):
         'monthly_trend':        months,
         'top_ai_performers':    top_ai,
         'top_human_performers': human_agents[:5],
+        'bucket_performance':   bucket_performance,
     }
 
 # ─────────────────────────────────────────────────────────────
@@ -2205,10 +2347,12 @@ def _init_fraud_flags():
     if df.empty:
         return
     now  = datetime.now()
-    cols = ['account_id', 'customer_name', 'outstanding_balance_sar', 'delinquency_bucket']
-    npa_wo = df[df['delinquency_bucket'].isin(['NPA', 'Write-off'])][cols]
-    other  = df[~df['delinquency_bucket'].isin(['NPA', 'Write-off'])][cols]
-    accs   = npa_wo.head(9).to_dict('records') + other.head(6).to_dict('records')
+    npa_buckets = ['NPA 91-180', 'NPA 181-360', 'NPA 361-450', 'Write-Off']
+    cols_src = ['loan_id', 'customer_name', 'outstanding_balance', 'dpd_bucket']
+    npa_wo_df = df[df['dpd_bucket'].isin(npa_buckets)][cols_src]
+    other_df  = df[~df['dpd_bucket'].isin(npa_buckets)][cols_src]
+    def _to_std(d): return [{'account_id':r['loan_id'],'customer_name':r['customer_name'],'outstanding_balance_sar':r['outstanding_balance'],'delinquency_bucket':r['dpd_bucket']} for r in d]
+    accs = _to_std(npa_wo_df.head(9).to_dict('records')) + _to_std(other_df.head(6).to_dict('records'))
 
     def ts(d): return (now - timedelta(days=d)).replace(hour=10, minute=0, second=0, microsecond=0).isoformat()
 
@@ -2269,7 +2413,7 @@ async def add_fraud_flag(account_id: str, req: FraudFlagRequest, user=Depends(ge
         raise HTTPException(403, "Insufficient permissions")
     data = get_data()
     df   = data.get('df', pd.DataFrame())
-    row  = df[df['account_id'] == account_id] if not df.empty else pd.DataFrame()
+    row  = df[df['loan_id'] == account_id] if not df.empty else pd.DataFrame()
     if row.empty:
         raise HTTPException(404, f"Account {account_id} not found")
     r = row.iloc[0]
@@ -2283,8 +2427,8 @@ async def add_fraud_flag(account_id: str, req: FraudFlagRequest, user=Depends(ge
         "flag_id":         f"FRD-{fid:05d}",
         "account_id":      account_id,
         "customer_name":   str(r.get('customer_name', '')),
-        "outstanding_sar": float(r.get('outstanding_balance_sar', 0)),
-        "bucket":          str(r.get('delinquency_bucket', '')),
+        "outstanding_sar": float(r.get('outstanding_balance', 0)),
+        "bucket":          str(r.get('dpd_bucket', '')),
         "severity":        req.severity,
         "reason":          req.reason,
         "notes":           req.notes,
@@ -2475,6 +2619,358 @@ async def get_audit_stats(current_user=Depends(require_permission("audit_logs"))
     }
 
 # ─────────────────────────────────────────────────────────────
+# PORTFOLIO SUMMARY / AGENT TARGETS / COLLECTION ACTIVITY
+# ─────────────────────────────────────────────────────────────
+
+@app.get("/portfolio-summary")
+async def get_portfolio_summary(
+    starter_type: Optional[str] = None,
+    rac_status:   Optional[str] = None,
+    user=Depends(get_current_user)
+):
+    from datetime import datetime as _dt
+    data        = get_data()
+    df          = data.get('df', pd.DataFrame())
+    call_events = data.get('call_events', pd.DataFrame())
+    if df.empty:
+        raise HTTPException(500, "Data not loaded")
+
+    filtered = df.copy()
+    if starter_type:
+        filtered = filtered[filtered['starter_type'] == starter_type]
+    if rac_status:
+        filtered = filtered[filtered['rac_status'] == rac_status]
+
+    NPA_BUCKETS    = ['NPA 91-180', 'NPA 181-360', 'NPA 361-450', 'Write-Off']
+    NPA_ONLY       = ['NPA 91-180', 'NPA 181-360', 'NPA 361-450']
+    RETAIL_BUCKETS = ['0 Days', '1-30 Days', '31-60 Days', '61-90 Days']
+    BUCKET_GROUP   = {
+        '0 Days':      '0 Days',
+        '1-30 Days':   '1-30',
+        '31-60 Days':  '31-60',
+        '61-90 Days':  '61-90',
+        'NPA 91-180':  'NPA',
+        'NPA 181-360': 'NPA',
+        'NPA 361-450': 'NPA',
+        'Write-Off':   'Write-Off',
+    }
+    BUCKET_ORDER = ['0 Days', '1-30', '31-60', '61-90', 'NPA', 'Write-Off']
+
+    total_accounts    = len(filtered)
+    total_outstanding = float(filtered['outstanding_balance'].sum())
+    total_overdue     = float(filtered['overdue_amount'].sum())
+
+    npa_mask    = filtered['dpd_bucket'].isin(NPA_BUCKETS)
+    retail_mask = filtered['dpd_bucket'].isin(RETAIL_BUCKETS)
+    npa_df      = filtered[npa_mask]
+    npa_count   = int(len(npa_df))
+    npa_sar     = round(float(npa_df['outstanding_balance'].sum()))
+    npa_pct     = round(float(npa_count / max(total_accounts, 1) * 100), 2)
+    retail_sar  = round(float(filtered[retail_mask]['outstanding_balance'].sum()))
+
+    # Detailed by_bucket (all raw buckets)
+    by_bucket = []
+    for bucket, grp in filtered.groupby('dpd_bucket'):
+        by_bucket.append({
+            'bucket':           bucket,
+            'count':            int(len(grp)),
+            'outstanding':      round(float(grp['outstanding_balance'].sum())),
+            'overdue':          round(float(grp['overdue_amount'].sum())),
+            'pct_of_portfolio': round(float(len(grp) / max(total_accounts, 1) * 100), 2),
+        })
+    by_bucket.sort(key=lambda x: x['outstanding'], reverse=True)
+
+    # by_product with NPA breakdown
+    by_product = []
+    for product, grp in filtered.groupby('product_type'):
+        prod_npa = grp[grp['dpd_bucket'].isin(NPA_BUCKETS)]
+        by_product.append({
+            'product_type': product,
+            'count':        int(len(grp)),
+            'outstanding':  round(float(grp['outstanding_balance'].sum())),
+            'npa_count':    int(len(prod_npa)),
+            'npa_sar':      round(float(prod_npa['outstanding_balance'].sum())),
+            'npa_pct':      round(float(len(prod_npa) / max(len(grp), 1) * 100), 2),
+        })
+    by_product.sort(key=lambda x: x['outstanding'], reverse=True)
+
+    # Stacked bar chart data: outstanding (SAR M) per grouped-bucket per product
+    filtered2 = filtered.copy()
+    filtered2['_bg'] = filtered2['dpd_bucket'].map(BUCKET_GROUP).fillna('Other')
+    pivot = (
+        filtered2.groupby(['_bg', 'product_type'])['outstanding_balance']
+        .sum()
+        .unstack(fill_value=0)
+    )
+    products_in_pivot = list(pivot.columns)
+    by_bucket_product = []
+    for bg in BUCKET_ORDER:
+        if bg not in pivot.index:
+            continue
+        row = {'bucket': bg}
+        for p in products_in_pivot:
+            row[p] = round(float(pivot.loc[bg, p]) / 1e6, 2)
+        by_bucket_product.append(row)
+
+    # ── Collection Portfolio matrices (per bucket × product) ──────────────
+    INVOICE_PRODS = ['Jarir', 'Premium Partners', 'Other Partners', 'Noon']
+    ALL_PRODS     = INVOICE_PRODS + ['Cash Loan', 'SME']
+
+    def _empty_sar():  return {p: 0.0 for p in ALL_PRODS}
+    def _empty_cnt():  return {p: 0   for p in ALL_PRODS}
+
+    by_bucket_product_matrix = {bg: _empty_sar() for bg in BUCKET_ORDER}
+    loan_count_matrix        = {bg: _empty_cnt() for bg in BUCKET_ORDER}
+    overdue_matrix           = {bg: _empty_sar() for bg in BUCKET_ORDER}
+    day_collections_matrix   = {bg: _empty_sar() for bg in BUCKET_ORDER}
+    mtd_collections_matrix   = {bg: _empty_sar() for bg in BUCKET_ORDER}
+
+    mat_grp = (
+        filtered2.groupby(['_bg', 'product_type'])
+        .agg(outs=('outstanding_balance', 'sum'),
+             cnt=('loan_id', 'count'),
+             ovd=('overdue_amount', 'sum'))
+        .reset_index()
+    )
+    for _, r in mat_grp.iterrows():
+        bg, prod = r['_bg'], r['product_type']
+        if bg in by_bucket_product_matrix and prod in ALL_PRODS:
+            by_bucket_product_matrix[bg][prod] = round(float(r['outs']) / 1e6, 2)
+            loan_count_matrix[bg][prod]        = int(r['cnt'])
+            overdue_matrix[bg][prod]           = round(float(r['ovd'])  / 1e6, 2)
+
+    # Loan count table by grouped bucket
+    loan_counts_bucket = []
+    for bg in BUCKET_ORDER:
+        grp = filtered2[filtered2['_bg'] == bg]
+        if len(grp) == 0:
+            continue
+        g_npa = grp[grp['dpd_bucket'].isin(NPA_BUCKETS)]
+        loan_counts_bucket.append({
+            'bucket':            bg,
+            'count':             int(len(grp)),
+            'outstanding_sar_m': round(float(grp['outstanding_balance'].sum()) / 1e6, 2),
+            'npa_count':         int(len(g_npa)),
+            'npa_pct':           round(float(len(g_npa) / max(len(grp), 1) * 100), 2),
+        })
+
+    # Loan count table by product
+    loan_counts_product = []
+    for product, grp in filtered.groupby('product_type'):
+        p_npa = grp[grp['dpd_bucket'].isin(NPA_BUCKETS)]
+        loan_counts_product.append({
+            'product':           product,
+            'count':             int(len(grp)),
+            'outstanding_sar_m': round(float(grp['outstanding_balance'].sum()) / 1e6, 2),
+            'npa_count':         int(len(p_npa)),
+            'npa_pct':           round(float(len(p_npa) / max(len(grp), 1) * 100), 2),
+        })
+    loan_counts_product.sort(key=lambda x: x['outstanding_sar_m'], reverse=True)
+
+    # Collections from call_events (PTP amounts for today and MTD)
+    day_collections_sar  = 0
+    mtd_collections_sar  = 0
+    collections_by_bucket = []
+    mtd_prefix = _dt.now().strftime('%Y-%m')
+
+    if not call_events.empty:
+        loan_ids = set(filtered['loan_id'])
+        ce = call_events[call_events['loan_id'].isin(loan_ids)].copy()
+        ce['_ptp'] = pd.to_numeric(ce['ptp_amount'], errors='coerce')
+        ptp_ce   = ce[ce['_ptp'] > 0]
+        most_recent_date = ptp_ce['call_date'].max() if not ptp_ce.empty else ''
+        today_ce = ptp_ce[ptp_ce['call_date'] == most_recent_date]
+        mtd_ce   = ptp_ce[ptp_ce['call_date'].str.startswith(mtd_prefix)]
+
+        day_collections_sar = round(float(today_ce['_ptp'].sum()))
+        mtd_collections_sar = round(float(mtd_ce['_ptp'].sum()))
+
+        mtd_ce2 = mtd_ce.copy()
+        mtd_ce2['_bg'] = mtd_ce2['dpd_bucket'].map(BUCKET_GROUP).fillna('Other')
+        for bg in BUCKET_ORDER:
+            bg_sum = float(mtd_ce2[mtd_ce2['_bg'] == bg]['_ptp'].sum())
+            if bg_sum > 0:
+                collections_by_bucket.append({
+                    'bucket':    bg,
+                    'mtd_sar':   round(bg_sum),
+                    'mtd_sar_m': round(bg_sum / 1e6, 2),
+                })
+
+        # Per-product collection matrices — product_type already in call_events
+        if not ptp_ce.empty:
+            _ce_prod = ptp_ce.copy()
+            _ce_prod['_bg'] = _ce_prod['dpd_bucket'].map(BUCKET_GROUP).fillna('Other')
+            for _df_c, _target in (
+                (_ce_prod[_ce_prod['call_date'] == most_recent_date], day_collections_matrix),
+                (_ce_prod[_ce_prod['call_date'].str.startswith(mtd_prefix)], mtd_collections_matrix),
+            ):
+                if _df_c.empty:
+                    continue
+                _grp = _df_c.groupby(['_bg', 'product_type'])['_ptp'].sum().reset_index()
+                for _, _r in _grp.iterrows():
+                    _bg, _prod = _r['_bg'], _r['product_type']
+                    if _bg in _target and _prod in ALL_PRODS:
+                        _target[_bg][_prod] = round(float(_r['_ptp']) / 1e6, 2)
+
+    return {
+        'total_portfolio': {
+            'grand_total_sar': round(total_outstanding),
+            'total_retail_sar': retail_sar,
+            'npa_sar':          npa_sar,
+            'npa_pct':          npa_pct,
+            'npa_count':        npa_count,
+            'total_accounts':   total_accounts,
+        },
+        'overdue': {
+            'grand_total_sar': round(total_overdue),
+        },
+        'collections': {
+            'day_collections_sar': day_collections_sar,
+            'mtd_collections_sar': mtd_collections_sar,
+            'by_bucket':           collections_by_bucket,
+        },
+        'by_bucket':          by_bucket,
+        'by_bucket_product':  by_bucket_product,
+        'by_product':         by_product,
+        'loan_counts': {
+            'by_bucket':  loan_counts_bucket,
+            'by_product': loan_counts_product,
+        },
+        'filters_applied': {'starter_type': starter_type, 'rac_status': rac_status},
+        'by_bucket_product_matrix': by_bucket_product_matrix,
+        'loan_count_matrix':        loan_count_matrix,
+        'overdue_matrix':           overdue_matrix,
+        'day_collections_matrix':   day_collections_matrix,
+        'mtd_collections_matrix':   mtd_collections_matrix,
+    }
+
+
+@app.get("/agent-targets")
+async def get_agent_targets(
+    period:     Optional[str] = None,
+    dpd_bucket: Optional[str] = None,
+    user=Depends(get_current_user)
+):
+    data = get_data()
+    df   = data.get('agent_targets', pd.DataFrame())
+    if df.empty:
+        raise HTTPException(500, "Agent targets data not loaded")
+
+    filtered = df.copy()
+    if period:
+        filtered = filtered[filtered['period'] == period]
+    if dpd_bucket:
+        filtered = filtered[filtered['bucket'] == dpd_bucket]
+
+    periods = sorted(df['period'].unique().tolist())
+    buckets = sorted(df['bucket'].unique().tolist())
+
+    return {
+        'total_records': len(filtered),
+        'periods':       periods,
+        'buckets':       buckets,
+        'targets':       json.loads(filtered.to_json(orient='records')),
+    }
+
+
+@app.get("/collection-activity")
+async def get_collection_activity(
+    start_date: Optional[str] = None,
+    end_date:   Optional[str] = None,
+    dpd_bucket: Optional[str] = None,
+    user=Depends(get_current_user)
+):
+    data = get_data()
+    df   = data.get('collection_activity', pd.DataFrame())
+    if df.empty:
+        raise HTTPException(500, "Collection activity data not loaded")
+
+    filtered = df.copy()
+    if start_date:
+        filtered = filtered[filtered['date'] >= start_date]
+    if end_date:
+        filtered = filtered[filtered['date'] <= end_date]
+    if dpd_bucket:
+        filtered = filtered[filtered['dpd_bucket'] == dpd_bucket]
+
+    return {
+        'total_rows': len(filtered),
+        'date_range': {
+            'min': filtered['date'].min() if len(filtered) else None,
+            'max': filtered['date'].max() if len(filtered) else None,
+        },
+        'buckets': sorted(df['dpd_bucket'].unique().tolist()),
+        'activity': json.loads(filtered.to_json(orient='records')),
+    }
+
+
+@app.get("/notification-activity")
+async def get_notification_activity(
+    start_date: Optional[str] = None,
+    end_date:   Optional[str] = None,
+    channel:    Optional[str] = None,
+    dpd_bucket: Optional[str] = None,
+    user=Depends(get_current_user)
+):
+    data = get_data()
+    df   = data.get('notification_events', pd.DataFrame())
+    if df.empty:
+        raise HTTPException(500, "Notification events data not loaded")
+
+    filtered = df.copy()
+    if start_date:
+        filtered = filtered[filtered['date'] >= start_date]
+    if end_date:
+        filtered = filtered[filtered['date'] <= end_date]
+    if channel:
+        filtered = filtered[filtered['channel'] == channel]
+    if dpd_bucket:
+        filtered = filtered[filtered['dpd_bucket'] == dpd_bucket]
+
+    filtered['attempt_count'] = pd.to_numeric(filtered['attempt_count'], errors='coerce').fillna(0).astype(int)
+    filtered['success_count'] = pd.to_numeric(filtered['success_count'], errors='coerce').fillna(0).astype(int)
+    filtered['success_pct']   = pd.to_numeric(filtered['success_pct'],   errors='coerce').fillna(None)
+
+    # Channel summary
+    ch_summary = (
+        filtered.groupby('channel')
+        .agg(total_attempts=('attempt_count', 'sum'),
+             total_success=('success_count', 'sum'))
+        .reset_index()
+    )
+    ch_summary['success_pct'] = (
+        ch_summary['total_success'] / ch_summary['total_attempts'].replace(0, float('nan'))
+    ).round(4)
+    ch_list = json.loads(ch_summary.to_json(orient='records'))
+
+    # Template performance
+    tmpl_summary = (
+        filtered.groupby('template_name')
+        .agg(total_attempts=('attempt_count', 'sum'),
+             total_success=('success_count', 'sum'))
+        .reset_index()
+        .sort_values('total_attempts', ascending=False)
+    )
+    tmpl_summary['success_pct'] = (
+        tmpl_summary['total_success'] / tmpl_summary['total_attempts'].replace(0, float('nan'))
+    ).round(4)
+    tmpl_list = json.loads(tmpl_summary.to_json(orient='records'))
+
+    return {
+        'total_rows': len(filtered),
+        'date_range': {
+            'min': filtered['date'].min() if len(filtered) else None,
+            'max': filtered['date'].max() if len(filtered) else None,
+        },
+        'channels':  sorted(df['channel'].unique().tolist()),
+        'buckets':   sorted(df['dpd_bucket'].unique().tolist()),
+        'channel_summary':   ch_list,
+        'template_performance': tmpl_list,
+        'activity': json.loads(filtered.to_json(orient='records')),
+    }
+
+
+# ─────────────────────────────────────────────────────────────
 # HEALTH CHECK
 # ─────────────────────────────────────────────────────────────
 
@@ -2483,12 +2979,16 @@ async def health():
     models = get_models()
     data   = get_data()
     return {
-        "status":        "healthy",
-        "version":       "2.0.0",
-        "models_loaded": len(models) > 0,
-        "data_loaded":   not data.get('df', pd.DataFrame()).empty,
-        "accounts":      len(data.get('df', pd.DataFrame())),
-        "timestamp":     datetime.now().isoformat(),
+        "status":              "healthy",
+        "version":             "2.0.0",
+        "models_loaded":       len(models) > 0,
+        "data_loaded":         not data.get('df', pd.DataFrame()).empty,
+        "accounts":            len(data.get('df', pd.DataFrame())),
+        "agent_targets":       len(data.get('agent_targets', pd.DataFrame())),
+        "collection_activity":  len(data.get('collection_activity', pd.DataFrame())),
+        "call_events":          len(data.get('call_events', pd.DataFrame())),
+        "notification_events":  len(data.get('notification_events', pd.DataFrame())),
+        "timestamp":           datetime.now().isoformat(),
     }
 
 if __name__ == "__main__":

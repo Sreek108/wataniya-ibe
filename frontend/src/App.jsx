@@ -16,6 +16,8 @@ import WaiversPage from './WaiversPage'
 import FraudReportPage from './FraudReportPage'
 import RollForwardPage from './RollForwardPage'
 import AIvsHumanPage from './AIvsHumanPage'
+import CollectionPortfolioPage from './CollectionPortfolioPage'
+import AgentPerformancePage from './AgentPerformancePage'
 
 function ProtectedLayout({ children }) {
   const { user, loading } = useAuth()
@@ -56,6 +58,8 @@ export default function App() {
       <AuthProvider>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/collection-portfolio" element={<ProtectedLayout><CollectionPortfolioPage /></ProtectedLayout>} />
+          <Route path="/agent-performance" element={<ProtectedLayout><AgentPerformancePage /></ProtectedLayout>} />
           <Route path="/dashboard" element={<ProtectedLayout><DashboardPage /></ProtectedLayout>} />
           <Route path="/agent" element={<ProtectedLayout><AgentWorkspace /></ProtectedLayout>} />
           <Route path="/scoring" element={<ProtectedLayout><MLScoringPanel /></ProtectedLayout>} />

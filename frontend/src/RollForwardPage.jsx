@@ -1,9 +1,30 @@
 import { useState, useEffect } from 'react'
 import { getRollForward, getCollectionEfficiency } from './api'
 
-// Display order: best → worst (left = better, right = worse in table)
-const DISPLAY_BUCKETS = ['Current', '1-30 DPD', '31-60 DPD', '61-90 DPD', 'NPA', 'Write-off']
-const BUCKET_COLORS   = { 'Current':'#22c55e','1-30 DPD':'#86efac','31-60 DPD':'#f59e0b','61-90 DPD':'#f97316','NPA':'#ef4444','Write-off':'#6b7280' }
+// Bucket names exactly as returned by the API (best → worst)
+const API_BUCKETS = ['0 Days', '1-30 Days', '31-60 Days', '61-90 Days', 'NPA 91-180', 'NPA 181-360', 'NPA 361-450', 'Write-Off']
+
+const BUCKET_LABEL = {
+  '0 Days':      'Current',
+  '1-30 Days':   '1-30 DPD',
+  '31-60 Days':  '31-60 DPD',
+  '61-90 Days':  '61-90 DPD',
+  'NPA 91-180':  'NPA 91-180',
+  'NPA 181-360': 'NPA 181-360',
+  'NPA 361-450': 'NPA 361-450',
+  'Write-Off':   'Write-Off',
+}
+
+const BUCKET_COLORS = {
+  '0 Days':      '#22c55e',
+  '1-30 Days':   '#86efac',
+  '31-60 Days':  '#f59e0b',
+  '61-90 Days':  '#f97316',
+  'NPA 91-180':  '#ef4444',
+  'NPA 181-360': '#dc2626',
+  'NPA 361-450': '#991b1b',
+  'Write-Off':   '#6b7280',
+}
 
 function fmt(n) { return n != null ? Number(n).toLocaleString() : '—' }
 function sarM(n) {
@@ -64,7 +85,7 @@ export default function RollForwardPage() {
   // Compute row totals and col totals
   const rowTotals = {}
   const colTotals = {}
-  for (const b of DISPLAY_BUCKETS) { rowTotals[b] = { count: 0, sar: 0 }; colTotals[b] = { count: 0, sar: 0 } }
+  for (const b of API_BUCKETS) { rowTotals[b] = { count: 0, sar: 0 }; colTotals[b] = { count: 0, sar: 0 } }
   for (const cell of (report?.matrix || [])) {
     if (rowTotals[cell.from_bucket]) { rowTotals[cell.from_bucket].count += cell.count; rowTotals[cell.from_bucket].sar += cell.sar }
     if (colTotals[cell.to_bucket])  { colTotals[cell.to_bucket].count  += cell.count;  colTotals[cell.to_bucket].sar  += cell.sar  }
@@ -145,21 +166,21 @@ export default function RollForwardPage() {
                 <thead>
                   <tr>
                     <th style={{ padding: '10px 14px', textAlign: 'left', fontSize: 11, color: '#888', fontWeight: 600, whiteSpace: 'nowrap' }}>From ↓ / To →</th>
-                    {DISPLAY_BUCKETS.map(b => (
+                    {API_BUCKETS.map(b => (
                       <th key={b} style={{ padding: '8px 10px', textAlign: 'center', fontSize: 10, fontWeight: 700, color: BUCKET_COLORS[b] || '#888', whiteSpace: 'nowrap', minWidth: 90 }}>
-                        {b}
+                        {BUCKET_LABEL[b] || b}
                       </th>
                     ))}
                     <th style={{ padding: '8px 10px', textAlign: 'center', fontSize: 10, fontWeight: 700, color: '#888' }}>Total</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {DISPLAY_BUCKETS.map((fromB, ri) => (
+                  {API_BUCKETS.map((fromB, ri) => (
                     <tr key={fromB}>
                       <td style={{ padding: '8px 14px', fontWeight: 700, fontSize: 11, color: BUCKET_COLORS[fromB] || '#888', whiteSpace: 'nowrap' }}>
-                        {fromB}
+                        {BUCKET_LABEL[fromB] || fromB}
                       </td>
-                      {DISPLAY_BUCKETS.map((toB, ci) => {
+                      {API_BUCKETS.map((toB, ci) => {
                         const cell = matrixMap[`${fromB}::${toB}`]
                         // ri < ci = from better to worse = rolled forward = red
                         // ri > ci = from worse to better = rolled back   = green
@@ -195,7 +216,7 @@ export default function RollForwardPage() {
                   {/* Column totals row */}
                   <tr style={{ borderTop: '2px solid #f0f2f7' }}>
                     <td style={{ padding: '8px 14px', fontWeight: 700, fontSize: 11, color: '#888' }}>Total</td>
-                    {DISPLAY_BUCKETS.map(b => (
+                    {API_BUCKETS.map(b => (
                       <td key={b} style={{ padding: '8px 10px', textAlign: 'center', background: '#fafbfc', borderRadius: 6 }}>
                         <div style={{ fontWeight: 700, fontSize: 12, color: '#1a1a2e' }}>{colTotals[b]?.count || 0}</div>
                         <div style={{ fontSize: 9, color: '#aaa' }}>SAR {sarM(colTotals[b]?.sar)}</div>

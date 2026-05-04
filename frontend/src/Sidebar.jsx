@@ -15,6 +15,8 @@ function Icon({ d, size=18 }) {
 }
 
 const NAV = [
+  { label:'Collection Portfolio', path:'/collection-portfolio', icon:'M18 20V10M12 20V4M6 20V14', roles:['admin','supervisor','collector','legal','support'] },
+  { label:'Agent Performance', path:'/agent-performance', icon:'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75', roles:['admin','supervisor'] },
   { label:'Dashboard',      path:'/dashboard', icon:'M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z', roles:['admin','supervisor','collector','legal','support'] },
   { label:'Agent Workspace',path:'/agent',     icon:'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm7 0l2 2 4-4', roles:['admin','supervisor','collector'] },
   { label:'Settlements',    path:'/settlements', icon:'M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z', roles:['admin','supervisor','collector'] },

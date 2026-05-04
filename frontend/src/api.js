@@ -149,6 +149,24 @@ export const getAccountFraudFlag = (account_id) => request('GET',    `/accounts/
 export const addFraudFlag        = (account_id, data) => request('POST', `/accounts/${account_id}/fraud-flag`, data)
 export const removeFraudFlag     = (account_id) => request('DELETE', `/accounts/${account_id}/fraud-flag`)
 
+// Portfolio Summary
+export function getPortfolioSummary(params = {}) {
+  const q = new URLSearchParams(params).toString()
+  return request('GET', `/portfolio-summary${q ? '?' + q : ''}`)
+}
+
+// Notification Activity
+export function getNotificationActivity(params = {}) {
+  const q = new URLSearchParams(params).toString()
+  return request('GET', `/notification-activity${q ? '?' + q : ''}`)
+}
+
+// Agent Targets
+export function getAgentTargets(params = {}) {
+  const q = new URLSearchParams(params).toString()
+  return request('GET', `/agent-targets${q ? '?' + q : ''}`)
+}
+
 // Reports
 export const getRollForward          = (period = 'month') => request('GET', `/reports/roll-forward?period=${period}`)
 export const getCollectionEfficiency = ()                 => request('GET', '/reports/collection-efficiency')

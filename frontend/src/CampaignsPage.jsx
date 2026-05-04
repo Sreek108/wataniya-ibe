@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getCampaigns, createCampaign, launchCampaign, pauseCampaign, getAccounts } from './api'
+import { getCampaigns, createCampaign, launchCampaign, pauseCampaign, getAccounts, getNotificationActivity } from './api'
 import { useAuth } from './AuthContext'
 
 // ── Colour tokens ─────────────────────────────────────────────
@@ -14,6 +14,25 @@ const CHANNEL_META = {
   'WhatsApp': { color: C.green,  bg: '#dcfce7', icon: '📱' },
   'AI Voice': { color: C.purple, bg: '#ede9fe', icon: '🤖' },
 }
+
+const NOTIF_CHANNEL_META = {
+  'SMS':  { color: C.blue,   bg: '#dbeafe', icon: '💬', label: 'SMS' },
+  'Push': { color: C.purple, bg: '#ede9fe', icon: '🔔', label: 'Push' },
+  'IVR':  { color: C.teal,   bg: '#ccfbf1', icon: '🤖', label: 'IVR / Robot' },
+  'NABA': { color: C.green,  bg: '#dcfce7', icon: '📢', label: 'NABA' },
+}
+
+// 4-week notification calendar (from Notification_Module.xlsx)
+const NOTIF_CALENDAR = [
+  { week: 1, day: 'Weekdays', push: 'All buckets', naba: 'PK3 · Write-Off · NPA · Nonstarter', sms: 'Pk1, Pk2, Pk3 · NPA · Write-Off', ivr: 'All' },
+  { week: 1, day: 'Weekend',  push: '—',           naba: '—',                                    sms: '—',                              ivr: 'All (if 800 team active)' },
+  { week: 2, day: 'Weekdays', push: 'All buckets', naba: 'Unreachable + 360 offer · NPA Unr · Nonstarter · Mobile update', sms: 'NPA 91-360 · 360+ & WO · Pk1–Pk3', ivr: 'Unreachable · Pk1–Pk3 · NPA & WO' },
+  { week: 2, day: 'Weekend',  push: '—',           naba: '—',                                    sms: '—',                              ivr: 'All' },
+  { week: 3, day: 'Weekdays', push: 'All buckets', naba: 'Unreachable + 360 · NPA Unr · Nonstarter · Unreachable Pk1–3 · PK3 After Legal', sms: 'NPA 91-360 · 360+ & WO · Pk1 & Pk2 · PK3 After Legal', ivr: 'NPA & WO · Pk1–3 · Unreachable · NPA & WO · All' },
+  { week: 3, day: 'Weekend',  push: '—',           naba: '—',                                    sms: '—',                              ivr: 'All' },
+  { week: 4, day: 'Weekdays', push: 'All buckets', naba: 'All Unr Pk1–3 NPA & WO · Write-off & NPA · Nonstarter Pk1–3 NPA & WO', sms: 'NPA 91-360 · 360+ & WO · Pk1–3', ivr: 'Unreachable · All · All · All · All' },
+  { week: 4, day: 'Weekend',  push: '—',           naba: '—',                                    sms: '—',                              ivr: 'All' },
+]
 
 const STATUS_META = {
   'Active':    { color: C.green,  bg: '#dcfce7' },
@@ -65,13 +84,22 @@ export default function CampaignsPage() {
   const { user } = useAuth()
   const canManage = ['admin', 'supervisor'].includes(user?.role)
 
+  const [activeTab, setActiveTab] = useState('campaigns')
+
   const [campaigns, setCampaigns] = useState([])
   const [loading, setLoading]     = useState(true)
-  const [actionId, setActionId]   = useState(null)    // id of campaign being actioned
+  const [actionId, setActionId]   = useState(null)
   const [showForm, setShowForm]   = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [targetPreview, setTargetPreview] = useState(null)
   const [previewLoading, setPreviewLoading] = useState(false)
+
+  // Notification Activity state
+  const [notifData, setNotifData]         = useState(null)
+  const [notifLoading, setNotifLoading]   = useState(false)
+  const [notifChannel, setNotifChannel]   = useState('')
+  const [notifBucket, setNotifBucket]     = useState('')
+  const [calendarWeek, setCalendarWeek]   = useState(1)
 
   // Create form state
   const [form, setForm] = useState({
@@ -80,6 +108,26 @@ export default function CampaignsPage() {
   })
 
   useEffect(() => { load() }, [])
+
+  useEffect(() => {
+    if (activeTab !== 'notifications') return
+    loadNotifData()
+  }, [activeTab, notifChannel, notifBucket])
+
+  async function loadNotifData() {
+    setNotifLoading(true)
+    try {
+      const params = {}
+      if (notifChannel) params.channel    = notifChannel
+      if (notifBucket)  params.dpd_bucket = notifBucket
+      const d = await getNotificationActivity(params)
+      setNotifData(d)
+    } catch (e) {
+      console.error(e)
+    } finally {
+      setNotifLoading(false)
+    }
+  }
 
   // Update target preview when buckets or filter change
   useEffect(() => {
@@ -167,7 +215,7 @@ export default function CampaignsPage() {
     <div style={{ padding: 24, maxWidth: 1400, background: '#f5f6fa', minHeight: '100vh' }}>
 
       {/* Header */}
-      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 20 }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 16 }}>
         <div>
           <div style={{ fontSize: 11, color: '#aaa', marginBottom: 4 }}>Operations › Campaign Manager</div>
           <h1 style={{ fontSize: 22, fontWeight: 700, color: '#1a1a2e', margin: 0 }}>Campaign Manager</h1>
@@ -175,7 +223,7 @@ export default function CampaignsPage() {
             {campaigns.length} campaigns · {active.length} active now
           </div>
         </div>
-        {canManage && (
+        {canManage && activeTab === 'campaigns' && (
           <button
             onClick={() => setShowForm(v => !v)}
             style={{
@@ -188,6 +236,25 @@ export default function CampaignsPage() {
           </button>
         )}
       </div>
+
+      {/* Tab Navigation */}
+      <div style={{ display: 'flex', gap: 4, marginBottom: 20, borderBottom: '1.5px solid #e8eaf0' }}>
+        {[
+          { key: 'campaigns',     label: '📋 Campaigns' },
+          { key: 'notifications', label: '🔔 Notification Activity' },
+        ].map(tab => (
+          <button key={tab.key} onClick={() => setActiveTab(tab.key)} style={{
+            padding: '9px 18px', fontSize: 13, fontWeight: 600, border: 'none', background: 'none',
+            cursor: 'pointer', borderBottom: activeTab === tab.key ? `2.5px solid ${C.purple}` : '2.5px solid transparent',
+            color: activeTab === tab.key ? C.purple : '#888', marginBottom: -1.5,
+          }}>
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* ── CAMPAIGNS TAB ── */}
+      {activeTab === 'campaigns' && <>
 
       {/* ── Section A — KPI Strip ── */}
       <div style={{ display: 'flex', gap: 12, marginBottom: 20 }}>
@@ -488,6 +555,225 @@ export default function CampaignsPage() {
             </table>
           </div>
         </div>
+      )}
+
+      </> }
+
+      {/* ── NOTIFICATIONS TAB ── */}
+      {activeTab === 'notifications' && (
+        <NotificationActivityPanel
+          data={notifData}
+          loading={notifLoading}
+          channel={notifChannel}
+          setChannel={setNotifChannel}
+          bucket={notifBucket}
+          setBucket={setNotifBucket}
+          calendarWeek={calendarWeek}
+          setCalendarWeek={setCalendarWeek}
+        />
+      )}
+
+    </div>
+  )
+}
+
+// ── Notification Activity Panel ───────────────────────────────
+function NotificationActivityPanel({ data, loading, channel, setChannel, bucket, setBucket, calendarWeek, setCalendarWeek }) {
+  const summary   = data?.channel_summary || []
+  const templates = data?.template_performance || []
+  const buckets   = ['', '1-30 DPD', '31-60 DPD', '61-90 DPD', '>91 DPD', 'Write-off']
+  const channels  = ['', 'SMS', 'Push', 'IVR', 'NABA']
+
+  const weekRows = NOTIF_CALENDAR.filter(r => r.week === calendarWeek)
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+
+      {/* Filters */}
+      <div style={{ display: 'flex', gap: 16, alignItems: 'flex-end', flexWrap: 'wrap' }}>
+        <div>
+          <div style={{ fontSize: 11, fontWeight: 600, color: '#888', marginBottom: 5 }}>Channel</div>
+          <div style={{ display: 'flex', gap: 6 }}>
+            {channels.map(ch => {
+              const m = ch ? NOTIF_CHANNEL_META[ch] : null
+              const sel = channel === ch
+              return (
+                <button key={ch || 'all'} onClick={() => setChannel(ch)} style={{
+                  padding: '6px 13px', borderRadius: 20, fontSize: 12, fontWeight: 600, cursor: 'pointer',
+                  border: `1.5px solid ${sel ? (m?.color || C.purple) : '#e0e3eb'}`,
+                  background: sel ? (m?.bg || '#ede9fe') : '#fff',
+                  color: sel ? (m?.color || C.purple) : '#888'
+                }}>
+                  {m ? `${m.icon} ${m.label}` : 'All Channels'}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+        <div>
+          <div style={{ fontSize: 11, fontWeight: 600, color: '#888', marginBottom: 5 }}>DPD Bucket</div>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+            {buckets.map(b => {
+              const sel = bucket === b
+              const bColor = { '1-30 DPD': C.green, '31-60 DPD': C.amber, '61-90 DPD': C.red, '>91 DPD': '#ef4444', 'Write-off': C.gray }[b] || C.purple
+              return (
+                <button key={b || 'all'} onClick={() => setBucket(b)} style={{
+                  padding: '6px 13px', borderRadius: 20, fontSize: 12, fontWeight: 600, cursor: 'pointer',
+                  border: `1.5px solid ${sel ? bColor : '#e0e3eb'}`,
+                  background: sel ? `${bColor}18` : '#fff',
+                  color: sel ? bColor : '#888'
+                }}>
+                  {b || 'All Buckets'}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+
+      {loading ? (
+        <div style={{ padding: 40, textAlign: 'center', color: '#aaa', fontSize: 13 }}>Loading notification data...</div>
+      ) : (
+        <>
+          {/* Channel Breakdown Cards */}
+          <div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 12 }}>Channel Breakdown — April 2026</div>
+            <div style={{ display: 'flex', gap: 12 }}>
+              {(data?.channel_summary || []).map(ch => {
+                const m = NOTIF_CHANNEL_META[ch.channel] || { color: C.gray, bg: '#f1f5f9', icon: '📡', label: ch.channel }
+                const hasSuccess = ch.success_pct != null && !isNaN(ch.success_pct)
+                return (
+                  <div key={ch.channel} style={{
+                    flex: 1, minWidth: 0, background: '#fff', borderRadius: 12, padding: '18px 20px',
+                    border: '0.5px solid #e8eaf0'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 9, marginBottom: 12 }}>
+                      <div style={{ width: 34, height: 34, borderRadius: 8, background: m.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>{m.icon}</div>
+                      <div>
+                        <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e' }}>{m.label}</div>
+                        <div style={{ fontSize: 10, color: '#aaa' }}>Weekdays only{ch.channel === 'IVR' ? ' + weekends' : ''}</div>
+                      </div>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                      <div style={{ textAlign: 'center', padding: '8px 4px', background: '#f8f9fc', borderRadius: 7 }}>
+                        <div style={{ fontSize: 18, fontWeight: 700, color: m.color }}>{(ch.total_attempts || 0).toLocaleString()}</div>
+                        <div style={{ fontSize: 10, color: '#aaa' }}>Attempts</div>
+                      </div>
+                      <div style={{ textAlign: 'center', padding: '8px 4px', background: '#f8f9fc', borderRadius: 7 }}>
+                        <div style={{ fontSize: 18, fontWeight: 700, color: hasSuccess ? C.green : '#bbb' }}>
+                          {hasSuccess ? `${(ch.success_pct * 100).toFixed(1)}%` : '—'}
+                        </div>
+                        <div style={{ fontSize: 10, color: '#aaa' }}>Success Rate</div>
+                      </div>
+                    </div>
+                    {hasSuccess && (
+                      <div style={{ marginTop: 10 }}>
+                        <ProgressBar value={ch.success_pct * 100} max={100} color={m.color} />
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* Weekly Notification Calendar */}
+          <div style={{ background: '#fff', borderRadius: 12, border: '0.5px solid #e8eaf0', overflow: 'hidden' }}>
+            <div style={{ padding: '14px 18px', borderBottom: '0.5px solid #f0f2f7', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontSize: 14, fontWeight: 600, color: '#1a1a2e' }}>4-Week Notification Schedule</span>
+              <div style={{ display: 'flex', gap: 6 }}>
+                {[1, 2, 3, 4].map(w => (
+                  <button key={w} onClick={() => setCalendarWeek(w)} style={{
+                    padding: '5px 12px', borderRadius: 6, fontSize: 12, fontWeight: 600, cursor: 'pointer', border: 'none',
+                    background: calendarWeek === w ? C.purple : '#f0f2f7',
+                    color: calendarWeek === w ? '#fff' : '#888'
+                  }}>Week {w}</button>
+                ))}
+              </div>
+            </div>
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+                <thead>
+                  <tr>
+                    {['Day Type', '🔔 Push', '📢 NABA', '💬 SMS', '🤖 IVR'].map(h => (
+                      <th key={h} style={{
+                        padding: '9px 14px', textAlign: 'left', fontSize: 10, fontWeight: 700,
+                        color: '#888', textTransform: 'uppercase', letterSpacing: '0.04em',
+                        background: '#fafbfc', borderBottom: '0.5px solid #e8eaf0'
+                      }}>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {weekRows.map((row, i) => (
+                    <tr key={i} style={{
+                      background: row.day === 'Weekend' ? '#fffbf0' : '#fff',
+                      borderBottom: i < weekRows.length - 1 ? '0.5px solid #f5f6fa' : 'none'
+                    }}>
+                      <td style={{ padding: '11px 14px', fontWeight: 600, color: row.day === 'Weekend' ? C.amber : '#1a1a2e', whiteSpace: 'nowrap' }}>
+                        {row.day === 'Weekend' ? '🌙 Weekend (Fri/Sat)' : '☀️ Weekdays (Sun–Thu)'}
+                      </td>
+                      {[row.push, row.naba, row.sms, row.ivr].map((cell, j) => (
+                        <td key={j} style={{ padding: '11px 14px', color: cell === '—' ? '#ccc' : '#555', maxWidth: 220 }}>
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Template Performance Table */}
+          <div style={{ background: '#fff', borderRadius: 12, border: '0.5px solid #e8eaf0', overflow: 'hidden' }}>
+            <div style={{ padding: '14px 18px', borderBottom: '0.5px solid #f0f2f7' }}>
+              <span style={{ fontSize: 14, fontWeight: 600, color: '#1a1a2e' }}>Template Performance</span>
+              <span style={{ fontSize: 11, color: '#aaa', marginLeft: 8 }}>April 2026 · ranked by attempts</span>
+            </div>
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+                <thead>
+                  <tr>
+                    {['#', 'Template', 'Total Attempts', 'Successes', 'Success Rate', 'Engagement'].map(h => (
+                      <th key={h} style={{
+                        padding: '9px 14px', textAlign: 'left', fontSize: 10, fontWeight: 700,
+                        color: '#888', textTransform: 'uppercase', letterSpacing: '0.04em',
+                        background: '#fafbfc', borderBottom: '0.5px solid #e8eaf0', whiteSpace: 'nowrap'
+                      }}>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {templates.map((t, i) => {
+                    const hasPct = t.success_pct != null && !isNaN(t.success_pct) && t.success_pct > 0
+                    const maxAttempts = templates[0]?.total_attempts || 1
+                    return (
+                      <tr key={t.template_name} style={{ borderBottom: i < templates.length - 1 ? '0.5px solid #f5f6fa' : 'none' }}>
+                        <td style={{ padding: '11px 14px', color: '#aaa', fontWeight: 700 }}>{i + 1}</td>
+                        <td style={{ padding: '11px 14px', fontWeight: 600, color: '#1a1a2e' }}>{t.template_name}</td>
+                        <td style={{ padding: '11px 14px', fontWeight: 700, color: C.blue }}>{(t.total_attempts || 0).toLocaleString()}</td>
+                        <td style={{ padding: '11px 14px', color: '#555' }}>
+                          {t.total_success > 0 ? t.total_success.toLocaleString() : '—'}
+                        </td>
+                        <td style={{ padding: '11px 14px' }}>
+                          {hasPct ? (
+                            <span style={{ fontWeight: 700, color: t.success_pct >= 0.9 ? C.green : t.success_pct >= 0.3 ? C.teal : C.amber }}>
+                              {(t.success_pct * 100).toFixed(1)}%
+                            </span>
+                          ) : <span style={{ color: '#ccc' }}>—</span>}
+                        </td>
+                        <td style={{ padding: '11px 14px', width: 140 }}>
+                          <ProgressBar value={t.total_attempts} max={maxAttempts} color={C.purple} />
+                        </td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </>
       )}
     </div>
   )

@@ -1035,6 +1035,7 @@ async def get_call_history(
     agent:     Optional[str] = None,
     bucket:    Optional[str] = None,
     search:    Optional[str] = None,
+    loan_id:   Optional[str] = None,
     limit:     int = 900,
     offset:    int = 0,
     user=Depends(get_current_user)
@@ -1045,6 +1046,7 @@ async def get_call_history(
         return {"total": 0, "calls": [], "summary": {}}
 
     filtered = df.copy()
+    if loan_id:   filtered = filtered[filtered['loan_id'] == loan_id]   # exact match
     if status:    filtered = filtered[filtered['status']    == status]
     if direction: filtered = filtered[filtered['call_direction'] == direction]
     if agent:     filtered = filtered[filtered['agent_name']== agent]
